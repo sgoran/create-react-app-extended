@@ -1,5 +1,11 @@
-@import '../../node_modules/bulma/css/bulma.css';
+@import './bulma.css';
 
+html{
+    background-color: #f5f7fa;
+}
+.center-container{
+  padding: 20px;
+}
 
 .App {
   text-align: center;
