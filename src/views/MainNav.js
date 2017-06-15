@@ -33,7 +33,7 @@ export default class MainNav extends Component {
 
 					{/* This "nav-menu" is hidden on mobile  Add the modifier "is-active" to display it on mobile */}
 					<div className="nav-right nav-menu">
-						<a className="nav-item">
+						<a className="nav-item" target="BLANK_" href="https://github.com/sgoran/create-react-app-extended">
 							Home
 		  				</a>
 						<a className="nav-item">

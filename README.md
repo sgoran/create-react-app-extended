@@ -18,6 +18,7 @@
 - Lifecycle, on demand component loading etc
 - PWA
 - TDD, helpfully with proper state setup
+- Animations like [this one](https://github.com/chenglou/react-motion)
 - Activity and Bug monitoring. Logging with proper external tools also
 
 ### Well Known Dependencies:
