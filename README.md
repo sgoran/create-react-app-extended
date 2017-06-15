@@ -1,11 +1,11 @@
-Goals of this repo is to:
+### Goals of this repo is to:
 
 1. Make my own react bootstrap project with all dependencies
 2. Store my custom components here
 3. Understand better React and "around" Reacy system
 4. Make development and bootstraping faster
 
-The project will grasp following concepts:
+### The project will grasp following concepts:
 
 - Virtual dom of course and it's advantages
 - React application architecture (components and composability over inheritance)
@@ -20,9 +20,9 @@ The project will grasp following concepts:
 - TDD, helpfully with proper state setup
 - Activity and Bug monitoring. Logging with proper external tools also
 
-Well Known Dependencies:
+### Well Known Dependencies:
 
-- [Create React App](https://github.com/facebookincubator/create-react-app) with webpack
+- [Create React App](https://github.com/facebookincubator/create-react-app) with [Webpack](https://github.com/webpack/webpack)
 - [React Router](https://github.com/ReactTraining/react-router)
 - [Redux](https://github.com/reactjs/redux)
 - [Jest](https://github.com/facebook/jest)
