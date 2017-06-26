@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-export default class Card extends Component {
+export default class About extends Component {
     render() {
         return (
             <div>
@@ -19,17 +19,10 @@ export default class Card extends Component {
                                 <img src="http://bulma.io/images/placeholders/96x96.png" alt="slika 2" />
                             </figure>
                         </div>
-                        <div className="media-content">
-                            <p className="title is-4">John Smith</p>
-                            <p className="subtitle is-6">@johnsmith</p>
-                        </div>
                     </div>
 
                     <div className="content">
-                        Lorem ipsum dolor sit amet,  <a>@bulmaio</a>.
-                    <a>#css</a> <a>#responsive</a>
-                        <br />
-                        <small>11:09 PM - 1 Jan 2016</small>
+                        About Page
                     </div>
                 </div>
             </div>

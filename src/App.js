@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import './resources/styles/App.css';
+import MainNav from './views/shared/MainNav';
+import SubNav from './views/shared/SubNav';
+import Footer from './views/shared/Footer';
+import Center from './views/shared/Center';
 
 
-import MainNav from './views/MainNav';
-import SubNav from './views/SubNav';
-import Footer from './views/Footer';
-import Center from './views/Center';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 
 class App extends Component {
 	render() {
