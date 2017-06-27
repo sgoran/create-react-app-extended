@@ -1,10 +1,28 @@
 import React, { Component } from 'react';
-
+import {
+  NavLink 
+} from 'react-router-dom';
 
 export default class MainNav extends Component {
+	
+
+	componentDidMount(){
+		//console.log('componentDidMount')
+		
+
+	}
+
+
+
+	navCls (){
+		return 'nav-item is-tab';
+	}
+
+	
+
 	render() {
 		return (
-				<nav className="nav has-shadow">
+				<nav className="nav has-shadow ">
 
 					<div className="nav-left">
 						<a className="nav-item"> <img src="http://bulma.io/images/bulma-logo.png" alt="Bulma logo" /></a>
@@ -32,33 +50,28 @@ export default class MainNav extends Component {
 					</span>
 
 					{/* This "nav-menu" is hidden on mobile  Add the modifier "is-active" to display it on mobile */}
-					<div className="nav-right nav-menu">
-						<a className="nav-item" target="BLANK_" href="https://github.com/sgoran/create-react-app-extended">
+					<div className="nav-right nav-menu ">
+						
+						<NavLink className={this.navCls()} exact activeClassName="is-active" to="/">
 							Home
-		  				</a>
-						<a className="nav-item">
+		  				</NavLink>
+						<NavLink className={this.navCls()} activeClassName="is-active" to="/documentation">
 							Documentation
-		  				</a>
-						<a className="nav-item">
-							Blog
-		 				</a>
+		  				</NavLink>
+						<NavLink className={this.navCls()} activeClassName="is-active" to="/form">
+							Form
+		  				</NavLink>
 
 						<div className="nav-item">
 							<div className="field is-grouped">
 								<p className="control">
-									<a className="button" >
-										<span className="icon">
-											<i className="fa fa-twitter"></i>
-										</span>
-										<span>Tweet</span>
-									</a>
-								</p>
-								<p className="control">
-									<a className="button is-primary">
+									<a className="button is-primary"  target="BLANK_" href="https://github.com/sgoran/create-react-app-extended" >
 										<span className="icon">
 											<i className="fa fa-download"></i>
 										</span>
-										<span>Download</span>
+										<span>
+											 <span>Download</span>
+										</span>
 									</a>
 								</p>
 							</div>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {logo} from resources/logo.png;
+import logo from '../../resources/images/logo.svg';
 
 export default class Card extends Component {
     render() {
@@ -8,7 +8,7 @@ export default class Card extends Component {
             <div className="card">
                 <div className="card-image">
                     <figure className="image is-4by3">
-                        <img src="{logo}" alt="slika 1" />
+                        <img src={logo} alt="slika 1" />
                     </figure>
                 </div>
 
@@ -16,7 +16,7 @@ export default class Card extends Component {
                     <div className="media">
                         <div className="media-left">
                             <figure className="image is-48x48">
-                                <img src="http://bulma.io/images/placeholders/96x96.png" alt="slika 2" />
+                                <img src={logo} alt="slika 2" />
                             </figure>
                         </div>
                         <div className="media-content">

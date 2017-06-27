@@ -1,31 +1,49 @@
 import React, { Component } from 'react';
+
 import './resources/styles/App.css';
+import './resources/font-awesome-4.7.0/css/font-awesome.min.css';
 import MainNav from './views/shared/MainNav';
 import SubNav from './views/shared/SubNav';
 import Footer from './views/shared/Footer';
-import Center from './views/shared/Center';
+
+import Home from './views/home/Home';
+import Form from './views/form/Form';
+import Documentation from './views/documentation/Documentation';
 
 
 import {
-  BrowserRouter as Router,
-  Route,
-  Link
+	BrowserRouter as Router,
+	Route,
+	Switch
 } from 'react-router-dom'
 
 class App extends Component {
 	render() {
 		return (
-			<div className="App">
 
-				<MainNav />
-				
-				<div className="center-container container">
-					<SubNav />	
-					<Center />
+			<Router>
+
+				<div className="App" key="kita">
+					<MainNav />
+
+					<div className="center-container container">
+
+						<SubNav />
+
+						<Switch>
+							<Route path="/" exact component={Home} />
+							<Route path="/documentation" component={Documentation} />
+							<Route path="/form" component={Form} />
+						</Switch>
+
+					</div>
+
+					<Footer />
+
 				</div>
-				<Footer />
 
-			</div>
+			</Router>
+
 		);
 	}
 }

@@ -1,24 +1,25 @@
 ### Goals of this repo is to:
 
-1. Make my own react bootstrap project with all dependencies
+1. [x] Make my own react bootstrap project with all dependencies
 2. Store my custom components here
 3. Understand better React and "around" Reacy system
 4. Make development and bootstraping faster
 
 ### The project will grasp following concepts:
 
-- Virtual dom of course and it's advantages
+- [x] Virtual dom of course and it's advantages
 - React application architecture (components and composability over inheritance)
+- Async Imports and [code spliting](http://serverless-stack.com/chapters/code-splitting-in-create-react-app.html)
 - Application State and it's architecture including actions, reducers etc
-- Routing
+- [x] Routing
 - Client side middleware
 - "API only" approach
 - JWT authentification
-- Layouting with the help of some of well known css frameworks
+- [x] Layouting with the help of some of well known css frameworks
 - Lifecycle, on demand component loading etc
 - PWA
 - TDD, helpfully with proper state setup
-- Animations like [this one](https://github.com/chenglou/react-motion)
+- Animations like [this one](https://github.com/chenglou/react-motion) or [react-transition](https://github.com/reactjs/react-transition-group/tree/v1-stable)
 - Activity and Bug monitoring. Logging with proper external tools also.
 Like [sentry](https://sentry.io/), [logrocket](https://logrocket.com) and similar
 

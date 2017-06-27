@@ -1,33 +1,57 @@
 import React, { Component } from 'react';
+import Card from '../shared/Card';
 
-
-export default class Home extends Component {
+export default class Center extends Component {
     render() {
+        
+        var components = [
+            1,2,3,4, 5
+            ];
+
         return (
-            <div>
-            <div className="card">
-                <div className="card-image">
-                    <figure className="image is-4by3">
-                        <img src="http://bulma.io/images/placeholders/1280x960.png" alt="slika 1" />
-                    </figure>
+            
+            <div className="columns">
+
+                <div className="column is-half-mobile is-one-third-tablet is-one-quarter-desktop">
+
+                    {components.map(function(cpm){
+                        return (
+                           <Card key={cpm}/>
+                        );
+                    })}
+
                 </div>
 
-                <div className="card-content">
-                    <div className="media">
-                        <div className="media-left">
-                            <figure className="image is-48x48">
-                                <img src="http://bulma.io/images/placeholders/96x96.png" alt="slika 2" />
-                            </figure>
-                        </div>
-                    </div>
+                <div className="column is-half-mobile is-one-third-tablet is-one-quarter-desktop">
 
-                    <div className="content">
-                        Home Page
-                    </div>
+                    {components.map(function(cpm){
+                        return (
+                           <Card key={cpm}/>
+                        );
+                    })}
+
                 </div>
+                <div className="column is-half-mobile is-one-third-tablet is-one-quarter-desktop">
+
+                    {components.map(function(cpm){
+                        return (
+                            <Card key={cpm}/>
+                        );
+                    })}
+
+                </div>
+                <div className="column is-half-mobile is-one-third-tablet is-one-quarter-desktop">
+
+                    {components.map(function(cpm){
+                        return (
+                            <Card key={cpm}/>
+                        );
+                    })}
+
+                </div>
+                
             </div>
-            <br />
-            </div>
+
         );
     }
 }
