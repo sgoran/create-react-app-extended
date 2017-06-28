@@ -31,3 +31,9 @@
 - [Jest](https://github.com/facebook/jest)
 - [Fetch](https://github.com/github/fetch)
 - [Bulma](https://github.com/jgthms/bulma)
+
+### Will load remote data for demo, for example 
+
+[x] crypto coin prices from some API
+[x] maybe some Highchart also 
+[x] tweets, where user can enter hash
