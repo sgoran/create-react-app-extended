@@ -7,7 +7,7 @@ export default class Center extends Component {
         var components = [
             1,2,3,4, 5
             ];
-
+console.log('Homeeeeeeeeeeeee')
         return (
             
             <div className="columns">
