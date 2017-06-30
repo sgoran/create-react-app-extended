@@ -26,6 +26,7 @@ export default class MainNav extends Component {
 
 					<div className="nav-left">
 						<a className="nav-item"> <img src="http://bulma.io/images/bulma-logo.png" alt="Bulma logo" /></a>
+						{this.props.broj}
 					</div>
 
 					<div className="nav-center">
@@ -60,6 +61,9 @@ export default class MainNav extends Component {
 		  				</NavLink>
 						<NavLink className={this.navCls()} activeClassName="is-active" to="/form">
 							Form
+		  				</NavLink>
+						<NavLink className={this.navCls()} activeClassName="is-active" to="/redux">
+							Redux Eample
 		  				</NavLink>
 
 						<div className="nav-item">

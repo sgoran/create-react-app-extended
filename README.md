@@ -37,3 +37,6 @@
 [x] crypto coin prices from some API
 [x] maybe some Highchart also 
 [x] tweets, where user can enter hash
+
+
+
