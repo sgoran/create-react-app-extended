@@ -25,41 +25,27 @@ import {
 
 class App extends Component {
 
-	constructor(props){
+	constructor(props) {
 
 		super(props);
 		var me = this;
 
 
 		this.state = {
-			broj: 3
+			broj: ''
 		};
 
 
 		this.promijeni = this.promijeni.bind(this);
 
 	}
-	promijeni(value){
-		console.log(value)
-		this.setState({broj: value})
+	promijeni(value) {
+		this.setState({ broj: value })
 	}
 	render() {
 		return (
-			<div>
-				{this.state.broj}
-	<ReduxFormExample  
-									key="ReduxFormExample1" 
-									stanje={this.state}  
-									promijeni={this.promijeni} />
-			</div>	
-		
 
-		);
-	}
-}
-
-export default App;
-/*<Router>
+			<Router>
 
 				<div className="App" key="kita">
 					<MainNav broj={this.state.broj} />
@@ -68,29 +54,42 @@ export default App;
 
 						<SubNav stanje={this.state} />
 
-						
-							<Switch key="imagine" className="switch">
-								<Animate animKey="el1" path="/" exact component={Home}  />
-								<Animate animKey="el2" path="/documentation" component={Documentation}  />
-								<Animate animKey="el3" path="/form" component={Form} />
-								<Animate animKey="el4" 
-									path="/redux" 
-									component={()=>(<ReduxFormExample  
-									key="ReduxFormExample1" 
-									stanje={this.state}  
-									promijeni={this.promijeni}/>)}
-								/>
-							</Switch>
-						
-						
+
+						<Switch key="imagine" className="switch">
+							<Animate  animKey="el1" path="/" exact component={Home} />
+							<Animate  animKey="el2" path="/documentation" component={Documentation} />
+							<Animate  animKey="el3" path="/form" component={Form} />
+							<Animate  animKey="el4"
+								path="/redux"
+								render={() => (<ReduxFormExample
+									key="ReduxFormExample1"
+									stanje={this.state}
+									promijeni={this.promijeni} />)}
+							/>
+						</Switch>
+
+
 					</div>
 
 					<Footer />
 
 				</div>
 
-			</Router> */
-			
+			</Router>
+
+		);
+	}
+}
+
+export default App;
+/*<div>
+				{this.state.broj}
+	<ReduxFormExample  
+									key="ReduxFormExample1" 
+									stanje={this.state}  
+									promijeni={this.promijeni} />
+			</div>	*/
+
 /** PRIMJER KOJI RADI
  
  class Test extends React.Component {
