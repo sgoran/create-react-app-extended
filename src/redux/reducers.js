@@ -15,7 +15,8 @@ const initialState = {
 
 // Our root reducer starts with the initial state
 // and must return a representation of the next state
-// The first time it runs, the rootReducer is called with no arguments, so it will always return the initialState on the first run
+// The first time it runs, the rootReducer is called with no arguments, 
+// so it will always return the initialState on the first run
 // The second argument here is the action that gets dispatched from the store. 
 // We'll handle our side-effects outside of the reducer in the action creators.
 

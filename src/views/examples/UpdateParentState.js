@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class ReduxFormExample extends Component {
+export default class UpdateParentState extends Component {
 
     constructor(props){
     

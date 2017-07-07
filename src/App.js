@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-//import { CSSTransitionGroup } from 'react-transition-group';
-
-
 
 import './resources/styles/App.css';
 import './resources/font-awesome-4.7.0/css/font-awesome.min.css';
-
 
 import Animate from './views/shared/Animate';
 import MainNav from './views/shared/MainNav';
@@ -15,7 +11,7 @@ import Footer from './views/shared/Footer';
 import Home from './views/home/Home';
 import Form from './views/form/Form';
 import Documentation from './views/documentation/Documentation';
-import ReduxFormExample from './views/reduxexamples/ReduxFormExample';
+import UpdateParentState from './views/examples/UpdateParentState';
 
 
 import {
@@ -61,8 +57,7 @@ class App extends Component {
 							<Animate  animKey="el3" path="/form" component={Form} />
 							<Animate  animKey="el4"
 								path="/redux"
-								render={() => (<ReduxFormExample
-									key="ReduxFormExample1"
+								render={() => (<UpdateParentState
 									stanje={this.state}
 									promijeni={this.promijeni} />)}
 							/>
