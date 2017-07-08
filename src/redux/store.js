@@ -19,8 +19,7 @@ import rootReducer from './reducers';
 import { createStore } from 'redux';
 
 const store = createStore(
-    rootReducer // root reducer
-    //initialState, // our initialState
+    rootReducer
 );
 
 

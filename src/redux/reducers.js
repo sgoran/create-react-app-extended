@@ -10,7 +10,7 @@ import { combineReducers } from 'redux';
 
 // Initial (starting) state
 const initialState = {
-	currentTime: new Date().toString()
+	desc: "Initial Desc"
 }
 
 // Our root reducer starts with the initial state
@@ -20,14 +20,16 @@ const initialState = {
 // The second argument here is the action that gets dispatched from the store. 
 // We'll handle our side-effects outside of the reducer in the action creators.
 
-function reducer(state = initialState, action) {
-
+function setDesc(state = initialState, action) {
+	
 	switch (action.type) {
 
-		case types.FETCH_NEW_TIME:
-
-			return { ...state, currentTime: action.payload }
-
+		case types.UPDATE_DESC:
+//console.log(action.payload)
+			var nextState =  { ...state, desc: action.payload }
+			console.log('state past: ' + state.desc);
+			console.log('state current: ' + nextState.desc)
+			return nextState;
 		default:
 
 			return state;
@@ -36,7 +38,7 @@ function reducer(state = initialState, action) {
 }
 
 const rootReducer = combineReducers({
-	reducer
+	setDesc
 });
 
 export default rootReducer;

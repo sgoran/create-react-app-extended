@@ -12,6 +12,7 @@ import Home from './views/home/Home';
 import Form from './views/form/Form';
 import Documentation from './views/documentation/Documentation';
 import UpdateParentState from './views/examples/UpdateParentState';
+import ReduxBasic from './views/examples/ReduxBasic';
 
 
 import {
@@ -43,12 +44,12 @@ class App extends Component {
 
 			<Router>
 
-				<div className="App" key="kita">
+				<div className="App" key="test">
 					<MainNav broj={this.state.broj} />
 
 					<div className="center-container container">
 
-						<SubNav stanje={this.state} />
+						{ /* <SubNav stanje={this.state} /> */}
 
 
 						<Switch key="imagine" className="switch">
@@ -56,11 +57,12 @@ class App extends Component {
 							<Animate  animKey="el2" path="/documentation" component={Documentation} />
 							<Animate  animKey="el3" path="/form" component={Form} />
 							<Animate  animKey="el4"
-								path="/redux"
+								path="/parentstate"
 								render={() => (<UpdateParentState
 									stanje={this.state}
 									promijeni={this.promijeni} />)}
 							/>
+							<Animate  animKey="el3" path="/redux" component={ReduxBasic} />
 						</Switch>
 
 

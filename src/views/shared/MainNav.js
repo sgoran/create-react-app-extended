@@ -4,21 +4,10 @@ import {
 } from 'react-router-dom';
 
 export default class MainNav extends Component {
-	
-
-	componentDidMount(){
-		//console.log('componentDidMount')
-		
-
-	}
-
-
 
 	navCls (){
 		return 'nav-item is-tab';
 	}
-
-	
 
 	render() {
 		return (
@@ -62,10 +51,13 @@ export default class MainNav extends Component {
 						<NavLink className={this.navCls()} activeClassName="is-active" to="/form">
 							Form
 		  				</NavLink>
+						<NavLink className={this.navCls()} activeClassName="is-active" to="/parentstate">
+							Update State Example
+		  				</NavLink>
+
 						<NavLink className={this.navCls()} activeClassName="is-active" to="/redux">
 							Redux Eample
 		  				</NavLink>
-
 						<div className="nav-item">
 							<div className="field is-grouped">
 								<p className="control">

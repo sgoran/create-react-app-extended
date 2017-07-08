@@ -34,9 +34,9 @@
 
 ### Will load remote data for demo, for example 
 
-- [x] crypto coin prices from some API
-- [x] maybe some Highchart also 
-- [x] tweets, where user can enter hash
+- [ ] crypto coin prices from some API
+- [ ] maybe some Highchart also 
+- [ ] tweets, where user can enter hash
 
 
 
