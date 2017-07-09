@@ -38,5 +38,11 @@
 - [ ] maybe some Highchart also 
 - [ ] tweets, where user can enter hash
 
+### TO-DO
 
+- inform better about container components - in gaeron examples they don't have any JSX
+- inform better about larger amount of reducers and actions organization
+but I suppose if I have reducer named "accouts" it can 
+manage multiple  action types like ADD_USER, EDIT_USER, DELETE_USER etc etc
+so we can split logic better
 
