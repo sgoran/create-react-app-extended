@@ -13,7 +13,7 @@ import Form from './views/form/Form';
 import Documentation from './views/documentation/Documentation';
 import UpdateParentState from './views/examples/UpdateParentState';
 import ReduxBasic from './views/examples/ReduxBasic';
-
+import { connect } from 'react-redux';
 
 import {
 	BrowserRouter as Router,
@@ -40,13 +40,14 @@ class App extends Component {
 		this.setState({ broj: value })
 	}
 	render() {
+		console.log(this.props)
 		return (
 
 			<Router>
 
 				<div className="App" key="test">
 					<MainNav broj={this.state.broj} />
-
+					{this.props.desc}
 					<div className="center-container container">
 
 						{ /* <SubNav stanje={this.state} /> */}
@@ -77,8 +78,15 @@ class App extends Component {
 		);
 	}
 }
+function mapStateToProps(state){
+   
+    return {
+        desc: state.desc
+    }
+    
+}
+export default connect(mapStateToProps)(App);
 
-export default App;
 /*<div>
 				{this.state.broj}
 	<ReduxFormExample  

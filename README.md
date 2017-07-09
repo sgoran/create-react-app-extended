@@ -10,7 +10,7 @@
 - [x] Virtual dom of course and it's advantages
 - [ ] React application architecture (components and composability over inheritance)
 - [ ] Async Imports and [code spliting](http://serverless-stack.com/chapters/code-splitting-in-create-react-app.html)
-- [ ] Application State and it's architecture including actions, reducers etc
+- [x] Application State and it's architecture including actions, reducers etc
 - [x] Routing
 - [ ] Client side middleware
 - [ ] "API only" approach
@@ -27,7 +27,7 @@
 
 - [Create React App](https://github.com/facebookincubator/create-react-app) with [Webpack](https://github.com/webpack/webpack)
 - [React Router](https://github.com/ReactTraining/react-router)
-- [Redux](https://github.com/reactjs/redux)
+- [Redux](https://github.com/reactjs/redux), react-redux etc
 - [Jest](https://github.com/facebook/jest)
 - [Fetch](https://github.com/github/fetch)
 - [Bulma](https://github.com/jgthms/bulma)

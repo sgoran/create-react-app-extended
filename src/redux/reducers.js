@@ -9,9 +9,7 @@ import * as types from './actionTypes';
 import { combineReducers } from 'redux';
 
 // Initial (starting) state
-const initialState = {
-	desc: "Initial Desc"
-}
+
 
 // Our root reducer starts with the initial state
 // and must return a representation of the next state
@@ -20,16 +18,48 @@ const initialState = {
 // The second argument here is the action that gets dispatched from the store. 
 // We'll handle our side-effects outside of the reducer in the action creators.
 
-function setDesc(state = initialState, action) {
+/**
+ * Reducers compose the store/state tree
+ * that is small detail that nobody writes about
+ * so reducer function names are object keys in store
+ * 
+ * Also when using combineReducers we can rearange store tree 
+ * so we can assign our own keys, yay
+ 
+ */
+
+/**
+ * Reducer can see only it's part of state 
+ */
+
+
+const setDesc = function(state = "Initial Desc", action) {
 	
 	switch (action.type) {
 
 		case types.UPDATE_DESC:
-//console.log(action.payload)
-			var nextState =  { ...state, desc: action.payload }
-			console.log('state past: ' + state.desc);
-			console.log('state current: ' + nextState.desc)
-			return nextState;
+		
+			return action.payload;
+
+		default:
+
+			return state;
+
+	}
+}
+
+const red2 = function(state = 'kiton', action) {
+	
+	switch (action.type) {
+
+		case types.TEST:
+		
+			return action.payload 
+			
+			// console.log('state past: ' + state.desc);
+			// console.log('state current: ' + nextState.desc)
+			
+			
 		default:
 
 			return state;
@@ -38,7 +68,8 @@ function setDesc(state = initialState, action) {
 }
 
 const rootReducer = combineReducers({
-	setDesc
+	desc: setDesc,
+	red2: red2
 });
 
 export default rootReducer;

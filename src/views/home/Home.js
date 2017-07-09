@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Card from '../shared/Card';
+import { connect } from 'react-redux';
 
-export default class Center extends Component {
+class Center extends Component {
     render() {
         
         var components = [
@@ -11,7 +12,7 @@ export default class Center extends Component {
         return (
             
             <div className="columns">
-
+                {this.props.desc}
                 <div className="column is-half-mobile is-one-third-tablet is-one-quarter-desktop">
 
                     {components.map(function(cpm){
@@ -56,4 +57,12 @@ export default class Center extends Component {
     }
 }
 
+function mapStateToProps(state){
+   
+    return {
+        desc: state.desc
+    }
+    
+}
+export default connect(mapStateToProps)(Center);
 

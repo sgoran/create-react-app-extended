@@ -7,16 +7,11 @@ class ReduxBasic extends Component {
 
     constructor (props) {
         super(props)
-       // this.descChange = this.descChange.bind(this)
-        console.log(this.props)
+       
     }
     
-
-    // descChange(value){
-    //     return value;
-    // }
-
     render () {
+    
         return (
             <div>
                 {this.props.desc}
@@ -31,16 +26,22 @@ class ReduxBasic extends Component {
 
 // unidirectional - state iz storea -> props
 function mapStateToProps(state){
-    //console.log(state)
-    return state.setDesc
+   
+    return {
+        desc: state.desc
+    }
+    
 }
 
 
 function mapDispatchToProps(dispatch){
     return {
-        /* descChange: function(desc){
-            dispatch(updateDesc(desc));
-        } */
+        /* 
+            descChange: function(desc){
+                dispatch(updateDesc(desc));
+            } 
+            isto kao ovo iznad
+        */
         descChange: desc => {
             dispatch(updateDesc(desc))
         }
