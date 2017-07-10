@@ -1,21 +1,28 @@
 import React, { Component } from 'react';
-import {
-  NavLink 
-} from 'react-router-dom';
+
 
 export default class MainNav extends Component {
-
-	navCls (){
-		return 'nav-item is-tab';
+	constructor (props) {
+		super(props)
+		this.onToggle = this.onToggle.bind(this)
+	}
+	
+	onToggle(e){
+		e.preventDefault();
+		this.props.onToggle(this.props.hideNav)
 	}
 
 	render() {
+		
 		return (
 				<nav className="nav has-shadow ">
 
 					<div className="nav-left">
-						<a className="nav-item"> <img src="http://bulma.io/images/bulma-logo.png" alt="Bulma logo" /></a>
-						{this.props.broj}
+						<a className="nav-item" href="" onClick={this.onToggle}>
+							<span className="icon">
+								<i className="fa fa-navicon"></i>
+							</span>
+						</a>
 					</div>
 
 					<div className="nav-center">
@@ -31,33 +38,8 @@ export default class MainNav extends Component {
 						</a>
 					</div>
 
-					{/* This "nav-toggle" hamburger menu is only visible on mobile You need JavaScript to toggle the "is-active" className on "nav-menu" */}
 
-					<span className="nav-toggle">
-						<span></span>
-						<span></span>
-						<span></span>
-					</span>
-
-					{/* This "nav-menu" is hidden on mobile  Add the modifier "is-active" to display it on mobile */}
 					<div className="nav-right nav-menu ">
-						
-						<NavLink className={this.navCls()} exact activeClassName="is-active" to="/">
-							Home
-		  				</NavLink>
-						<NavLink className={this.navCls()} activeClassName="is-active" to="/documentation">
-							Documentation
-		  				</NavLink>
-						<NavLink className={this.navCls()} activeClassName="is-active" to="/form">
-							Form
-		  				</NavLink>
-						<NavLink className={this.navCls()} activeClassName="is-active" to="/parentstate">
-							Update State Example
-		  				</NavLink>
-
-						<NavLink className={this.navCls()} activeClassName="is-active" to="/redux">
-							Redux Eample
-		  				</NavLink>
 						<div className="nav-item">
 							<div className="field is-grouped">
 								<p className="control">

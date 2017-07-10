@@ -6,3 +6,11 @@ export const updateDesc  = function(desc) {
     payload: desc
   }
 }
+
+export const toggleNav  = function(toggle) {
+ // console.log(toggle)
+  return {
+    type: types.TOGGLE_NAV,
+    payload: toggle
+  }
+}

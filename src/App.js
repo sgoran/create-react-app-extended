@@ -7,12 +7,16 @@ import Animate from './views/shared/Animate';
 import MainNav from './views/shared/MainNav';
 import SubNav from './views/shared/SubNav';
 import Footer from './views/shared/Footer';
+import SideMenu from './views/shared/SideMenu';
 
 import Home from './views/home/Home';
 import Form from './views/form/Form';
 import Documentation from './views/documentation/Documentation';
 import UpdateParentState from './views/examples/UpdateParentState';
 import ReduxBasic from './views/examples/ReduxBasic';
+import { toggleNav } from './redux/actions/actions';
+
+
 import { connect } from 'react-redux';
 
 import {
@@ -39,37 +43,53 @@ class App extends Component {
 	promijeni(value) {
 		this.setState({ broj: value })
 	}
-	render() {
+
+	centerClass () {
 		console.log(this.props)
+			var classNames =  "column centerView";
+			if(!this.props.settings.toggleNav)
+				classNames += " is-10"
+
+			return classNames;	
+	}
+
+
+	render() {
+
+		console.log(this.props.settings)
 		return (
 
 			<Router>
 
 				<div className="App" key="test">
-					<MainNav broj={this.state.broj} />
-					{this.props.desc}
-					<div className="center-container container">
+					
+					<MainNav onToggle={this.props.toggleSideNav} hideNav={this.props.settings.toggleNav}/>
 
-						{ /* <SubNav stanje={this.state} /> */}
+					<div className="columns">
 
+						<SideMenu className="column is-2 sideNav menu" hidden={this.props.settings.toggleNav} />
+						
 
-						<Switch key="imagine" className="switch">
-							<Animate  animKey="el1" path="/" exact component={Home} />
-							<Animate  animKey="el2" path="/documentation" component={Documentation} />
-							<Animate  animKey="el3" path="/form" component={Form} />
-							<Animate  animKey="el4"
-								path="/parentstate"
-								render={() => (<UpdateParentState
-									stanje={this.state}
-									promijeni={this.promijeni} />)}
-							/>
-							<Animate  animKey="el3" path="/redux" component={ReduxBasic} />
-						</Switch>
+						<div className={this.centerClass()}>
 
+				  		<Switch key="imagine" className="switch">
+								<Animate  animKey="el1" path="/" exact component={Home} />
+								<Animate  animKey="el2" path="/documentation" component={Documentation} />
+								<Animate  animKey="el3" path="/form" component={Form} />
+								<Animate  animKey="el4"
+									path="/parentstate"
+									render={() => (<UpdateParentState
+										stanje={this.state}
+										promijeni={this.promijeni} />)}
+								/>
+								<Animate  animKey="el3" path="/redux" component={ReduxBasic} />
+							</Switch>
 
-					</div>
+						</div>
 
-					<Footer />
+					</div>	
+					
+					{/*<Footer />*/}
 
 				</div>
 
@@ -79,80 +99,20 @@ class App extends Component {
 	}
 }
 function mapStateToProps(state){
-   
     return {
-        desc: state.desc
+        desc: state.desc,
+				settings: state.settings
     }
     
 }
-export default connect(mapStateToProps)(App);
 
-/*<div>
-				{this.state.broj}
-	<ReduxFormExample  
-									key="ReduxFormExample1" 
-									stanje={this.state}  
-									promijeni={this.promijeni} />
-			</div>	*/
-
-/** PRIMJER KOJI RADI
- 
- class Test extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {value: '123'};
-
-    
-  }
-  
-   render() {
-    return (
-      <div>
-        {this.state.value}
-      <NameForm otac={this} podaci={this.state}/>
-      </div>
-    )
-   }
+function mapDispatchToProps(dispatch){
+	  return {
+        toggleSideNav: hide => {
+					
+					//console.log(hide)
+					dispatch(toggleNav(hide))
+        }
+    }
 }
-
-
-// NAME FORM
-class NameForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-  componentDidMount(){
-    alert(1)
-  }
-  handleChange(event) {
-    this.props.otac.setState({value: event.target.value});
-  }
-
-  handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
-    event.preventDefault();
-  }
-
-  render() {
-    return (
-      <div>
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Name:
-          <input type="text" value={this.props.podaci.value} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
-        </div>
-    );
-  }
-}
-
-ReactDOM.render(
-  <Test />,
-  document.getElementById('root')
-);
-
-*/
+export default connect(mapStateToProps, mapDispatchToProps)(App);

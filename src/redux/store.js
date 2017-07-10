@@ -14,7 +14,7 @@
     action. Only required parameter in action is type. Types are just identifiers for reducers.
 */
 
-import rootReducer from './reducers';
+import rootReducer from './reducers/reducers';
 
 import { createStore } from 'redux';
 

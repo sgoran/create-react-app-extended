@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Input from '../shared/Input'
 import { connect } from 'react-redux'
-import { updateDesc } from '../../redux/actions';
+import { updateDesc } from '../../redux/actions/actions';
 
 class ReduxBasic extends Component {
 

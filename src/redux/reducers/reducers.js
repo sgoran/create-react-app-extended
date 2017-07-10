@@ -5,7 +5,10 @@
 // When we dispatch an action on the store, this reducer function will be called with 
 // the current state of the application and the action that causes the state to update.
 
-import * as types from './actionTypes';
+import * as types from '../actions/actionTypes';
+
+import settings from './settings';
+
 import { combineReducers } from 'redux';
 
 // Initial (starting) state
@@ -33,7 +36,7 @@ import { combineReducers } from 'redux';
  */
 
 
-const setDesc = function(state = "Initial Desc", action) {
+const desc = function(state = "Initial Desc", action) {
 	
 	switch (action.type) {
 
@@ -48,28 +51,11 @@ const setDesc = function(state = "Initial Desc", action) {
 	}
 }
 
-const red2 = function(state = 'kiton', action) {
-	
-	switch (action.type) {
 
-		case types.TEST:
-		
-			return action.payload 
-			
-			// console.log('state past: ' + state.desc);
-			// console.log('state current: ' + nextState.desc)
-			
-			
-		default:
-
-			return state;
-
-	}
-}
 
 const rootReducer = combineReducers({
-	desc: setDesc,
-	red2: red2
+	desc,
+	settings
 });
 
 export default rootReducer;

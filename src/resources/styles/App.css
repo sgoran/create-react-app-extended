@@ -77,3 +77,16 @@ html{
   opacity: 1;
   transition: opacity .5s ease-in;
 }
+
+.sideNav{
+  background-color: white;
+  z-index: 999;
+}
+
+.centerView{
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow: auto;
+  padding: 34px;
+  padding-top: 40px;
+}
