@@ -5,8 +5,8 @@ import './resources/font-awesome-4.7.0/css/font-awesome.min.css';
 
 import Animate from './views/shared/Animate';
 import MainNav from './views/shared/MainNav';
-import SubNav from './views/shared/SubNav';
-import Footer from './views/shared/Footer';
+//import SubNav from './views/shared/SubNav';
+//import Footer from './views/shared/Footer';
 import SideMenu from './views/shared/SideMenu';
 
 import Home from './views/home/Home';
@@ -29,13 +29,10 @@ class App extends Component {
 	constructor(props) {
 
 		super(props);
-		var me = this;
-
 
 		this.state = {
 			broj: ''
 		};
-
 
 		this.promijeni = this.promijeni.bind(this);
 
@@ -45,18 +42,17 @@ class App extends Component {
 	}
 
 	centerClass () {
-		console.log(this.props)
-			var classNames =  "column centerView";
-			if(!this.props.settings.toggleNav)
-				classNames += " is-10"
+		
+		var classNames =  "column centerView";
+		if(!this.props.settings.toggleNav)
+			classNames += " is-10"
 
-			return classNames;	
+		return classNames;	
 	}
 
 
 	render() {
 
-		console.log(this.props.settings)
 		return (
 
 			<Router>

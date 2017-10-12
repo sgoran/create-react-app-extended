@@ -2,14 +2,16 @@ import React, { Component } from 'react'
 import Input from '../shared/Input'
 import { connect } from 'react-redux'
 import { updateDesc } from '../../redux/actions/actions';
+import 'whatwg-fetch';
 
 class ReduxBasic extends Component {
 
-    constructor (props) {
-        super(props)
-       
-    }
+    componentDidMount(){
+
+        console.log(fetch)
     
+    }
+
     render () {
     
         return (
